@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anotador IA</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top"><b class="brand">Anotador IA</b><span id="count" class="mute"></span>
+  <button id="theme" class="ghost">Tema</button></header>
+<main>
+<section id="home">
+  <div class="row"><button id="new" class="primary">Nova aula</button>
+    <input id="q" type="search" placeholder="Buscar por título ou conteúdo" aria-label="Buscar aulas">
+    <button id="wipe" class="ghost">Apagar todas</button></div>
+  <ul id="list" class="list"></ul>
+</section>
+<section id="session" hidden>
+  <div class="row"><input id="title" aria-label="Título da aula" placeholder="Título da aula">
+    <select id="source" aria-label="Fonte do áudio"><option value="tab">Aba (aula)</option><option value="mic">Microfone</option></select>
+    <button id="start" class="primary">Iniciar aula</button><button id="stop" class="danger" hidden>Encerrar aula</button></div>
+  <div class="row mute"><span id="dot" class="dot"></span><span id="status">Pronto para iniciar.</span>
+    <span id="clock">00:00</span><div class="meter"><i id="level"></i></div></div>
+  <p id="err" class="alert" role="alert" hidden></p>
+  <div class="cols"><div><h2>Transcrição</h2><div id="tr" class="box"></div></div>
+    <div><h2>Anotações em construção</h2><pre id="live" class="box"></pre></div></div>
+  <button id="back1" class="ghost">Voltar</button>
+</section>
+<section id="notes" hidden>
+  <div class="row"><input id="ntitle" aria-label="Título"><button id="copy" class="ghost">Copiar</button>
+    <button id="md" class="ghost">Exportar Markdown</button><button id="pdf" class="ghost">Exportar PDF</button>
+    <button id="del" class="ghost">Excluir</button><button id="back2" class="ghost">Voltar</button></div>
+  <div id="tabs" class="tabs" role="tablist">
+    <button role="tab" data-t="ntr">Transcrição</button><button role="tab" data-t="nnotes">Anotações organizadas</button>
+    <button role="tab" data-t="explain">Explicação da aula</button><button role="tab" data-t="summary">Resumo</button>
+    <button role="tab" data-t="exercises">Exercícios</button></div>
+  <p id="ai-msg" class="alert" hidden></p>
+  <div class="panel" data-p="ntr"><div id="ntr" class="box"></div></div>
+  <div class="panel" data-p="nnotes" hidden><textarea id="ntext" class="box" aria-label="Anotações"></textarea></div>
+  <div id="ai-panels"></div>
+</section>
+</main>
+<div id="print"></div>
+<script type="module" src="app.js"></script>
+</body></html>

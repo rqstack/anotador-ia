@@ -1,0 +1,2 @@
+{ "name": "anotador-ia", "private": true, "type": "module",
+  "scripts": { "test": "node web/test-notes.mjs && python server/test_textutil.py && python server/test_teach.py" } }
